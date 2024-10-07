@@ -109,12 +109,12 @@ def main() -> None:
     qa_system.index_pdf(args.file)
 
     while True:
-        question = input("[Question] ")
+        question = input("Question: ")
         response = qa_system.generate_answer(question)
         for i, text in enumerate(response.search_results):
-            print(f"[Search result {i + 1}]")
+            print(f"### Search result {i + 1} ###")
             print(text)
-        print(f"[Answer] {response.answer}")
+        print(f"Answer: {response.answer}")
 
 
 if __name__ == "__main__":
